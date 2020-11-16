@@ -11,6 +11,30 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="headerfixed.js"></script>
     <script src="smoothscroll.js"></script>
+        <script>
+        $(document).ready(function(){
+      $('body').append('<a href="index.html" id="go-top" title="На верх страницы">&#8593</a>');
+    });
+
+    $(function() {
+     $.fn.scrollToTop = function() {
+      $(this).hide().removeAttr("href");
+      if ($(window).scrollTop() >= "250") $(this).fadeIn("slow")
+      var scrollDiv = $(this);
+      $(window).scroll(function() {
+       if ($(window).scrollTop() <= "250") $(scrollDiv).fadeOut("slow")
+       else $(scrollDiv).fadeIn("slow")
+      });
+      $(this).click(function() {
+       $("html, body").animate({scrollTop: 0}, "slow")
+      })
+     }
+    });
+
+    $(function() {
+     $("#go-top").scrollToTop();
+    });
+    </script
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script> <!-- Smooth scroll -->
     <script>
         SmoothScroll({
@@ -873,30 +897,7 @@
 </body>
 <script src="slider.js"></script>
 <script src="countup.js"></script>
-<script>
-    $(document).ready(function(){
-  $('body').append('<a href="index.html" id="go-top" title="На верх страницы">&#8593</a>');
-});
-
-$(function() {
- $.fn.scrollToTop = function() {
-  $(this).hide().removeAttr("href");
-  if ($(window).scrollTop() >= "250") $(this).fadeIn("slow")
-  var scrollDiv = $(this);
-  $(window).scroll(function() {
-   if ($(window).scrollTop() <= "250") $(scrollDiv).fadeOut("slow")
-   else $(scrollDiv).fadeIn("slow")
-  });
-  $(this).click(function() {
-   $("html, body").animate({scrollTop: 0}, "slow")
-  })
- }
-});
-
-$(function() {
- $("#go-top").scrollToTop();
-});
-</script>
+>
 
 
 
