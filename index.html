@@ -9,32 +9,9 @@
     integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;800&family=Roboto:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script text="text/javascript" src="scroll.js"></script>
     <script src="headerfixed.js"></script>
     <script src="smoothscroll.js"></script>
-        <script>
-        $(document).ready(function(){
-      $('body').append('<a href="index.html" id="go-top" title="На верх страницы">&#8593</a>');
-    });
-
-    $(function() {
-     $.fn.scrollToTop = function() {
-      $(this).hide().removeAttr("href");
-      if ($(window).scrollTop() >= "250") $(this).fadeIn("slow")
-      var scrollDiv = $(this);
-      $(window).scroll(function() {
-       if ($(window).scrollTop() <= "250") $(scrollDiv).fadeOut("slow")
-       else $(scrollDiv).fadeIn("slow")
-      });
-      $(this).click(function() {
-       $("html, body").animate({scrollTop: 0}, "slow")
-      })
-     }
-    });
-
-    $(function() {
-     $("#go-top").scrollToTop();
-    });
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script> <!-- Smooth scroll -->
     <script>
         SmoothScroll({
@@ -69,6 +46,13 @@
     
 
 </head>
+<!-- Прелоадер -->
+  <div class="preloader">
+    <div class="preloader__row">
+      <div class="preloader__item"></div>
+      <div class="preloader__item"></div>
+    </div>
+  </div>
 
 <header class="header" id="header">
     <div class="container">
@@ -168,7 +152,7 @@
     </div><!-- /.container -->
 </section>
 
-    <div class="statistics">
+    <div class="statistics" id="statistics">
         <div class="container">
             <div class="stat">
                 <div class="stat__item">
@@ -897,7 +881,13 @@
 </body>
 <script src="slider.js"></script>
 <script src="countup.js"></script>
->
+<script>
+  $(window).on('load', function () {
+  window.setTimeout(function () {
+    $('.preloader').fadeOut().end().delay(400).fadeOut('slow');
+  }, 500);
+});
+</script>
 
 
 
