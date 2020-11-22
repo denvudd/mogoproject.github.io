@@ -19,6 +19,7 @@ document.addEventListener('scroll', () => {
     else if(window.scrollY < scrollToElem && !flag) { flag = true; }
 });
 
+/* count up function */
 
 document.addEventListener('load', count())
 
