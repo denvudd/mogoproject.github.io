@@ -156,6 +156,8 @@ hr {
     
 }
 
+
+
 /* Intro */
 
 .intro {
@@ -223,7 +225,6 @@ hr {
 
 .header {
     position: absolute;
-    
     left: 0;
     right: 0;
     z-index: 1000;
@@ -241,6 +242,8 @@ hr {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    
+    
 }
 
 .header__logo {
@@ -259,14 +262,15 @@ hr {
     z-index: 100;
     padding-top: 5px;
     padding-bottom: 5px;
+    
+    
 }
 
 .header.fixed .header__inner {
-    
-    
-    
     border-bottom: 0;
+    
 }
+
 
 
 /* Navigation/Menu */
@@ -1046,7 +1050,7 @@ input {
             transform: translateY(-50%);
 }
 
-.accordion__tile {
+.accordion__title {
     margin-left: 50px;
 }
 
@@ -1230,13 +1234,13 @@ input:checked ~ .tab-content {
 }
 
 .social__item {
-    height: 55px;
-    width: 55px;
+    height: 35px;
+    width: 35px;
     background-color: #fce38a;
     border-right: 1px solid #f38181;
     text-decoration: none;
     color: #f38181;
-    font-size: 45px;
+    font-size: 31px;
     padding: 12px 12px;
     line-height: 1;
     
@@ -1846,6 +1850,7 @@ input:checked ~ .tab-content {
 .copyright span {
     color: #f38181;
 }
+
 
  
 
