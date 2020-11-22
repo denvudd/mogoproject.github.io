@@ -1,3 +1,25 @@
+/* scroll event */
+
+let target = document.querySelector('#statistics');
+// top offset to element
+let targetPos = target.getBoundingClientRect().top;
+// window height
+let winHeight = window.innerHeight;
+// Really top offset to element
+let scrollToElem = targetPos - winHeight;
+// flag to check re-scroll
+let flag = true;
+
+document.addEventListener('scroll', () => {
+    // if we scroll to element
+    if (window.scrollY > scrollToElem && flag) {
+        count(); flag = false;
+    }
+    // if we scroll to the element again, then everything will work again
+    else if(window.scrollY < scrollToElem && !flag) { flag = true; }
+});
+
+
 document.addEventListener('load', count())
 
 function count() {
